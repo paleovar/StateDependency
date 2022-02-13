@@ -101,7 +101,7 @@ col.orange <- COLS[["PI"]]
 
 LTYS <- c(1,1,2)
 
-saveToPDF <- T
+saveToPDF <- F
 if(saveToPDF) 
 {
   cairo_pdf("04_variance_ratios/063_all_spectra_average_short_new.pdf",

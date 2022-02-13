@@ -45,7 +45,7 @@ zonalmeanlab <- list("Surface Temperature"="Zon. mean surface temperature [°C]"
                     "Sea Level Pressure"="Zon. mean sea level pressure [hPa]",
                     "500mbar Wind Fields"="Zon. mean wind vel. (500mbar) [m/s]")
 
-plot <- T
+plot <- F
 
 if(plot)
 {

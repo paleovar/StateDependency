@@ -199,7 +199,7 @@ if (!file.exists(savefile))
 COL <- c(COLS[["LGM"]], COLS[["PI"]])
 LTYS <- c(1,1)
 
-plot <- T
+plot <- F
 
 if(plot)
 {

@@ -47,7 +47,7 @@ if(!file.exists(paste(filename,".RData",sep="")))
 }
 
 #---PLOT---#
-saveToPDF <- T
+saveToPDF <- F
 
 gmst_sync_f_d <- apply(gmst_sync, 2, function(x){detrend(filter(x, des))})
 

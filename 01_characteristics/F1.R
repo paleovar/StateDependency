@@ -47,17 +47,23 @@ if(!file.exists(paste(filename,".RData",sep="")))
 }
 
 #---PLOT---#
-saveToPDF <- F
+saveToPDF <- T
 
 gmst_sync_f_d <- apply(gmst_sync, 2, function(x){detrend(filter(x, des))})
 
 var <- list()
+sd <- list()
 variances <- apply(gmst_sync_f_d, 2, function(x){var(x, na.rm = T)})
 variances <- sqrt(variances)
 var$lgm_uf <- mean(variances[LGM&!forced])
 var$lgm_f <- mean(variances[LGM&forced])
 var$pi_uf <- mean(variances[!LGM&!forced])
 var$pi_f <- mean(variances[!LGM&forced])
+
+sd$lgm_uf <- sd(variances[LGM&!forced])
+sd$lgm_f <- sd(variances[LGM&forced])
+sd$pi_uf <- sd(variances[!LGM&!forced])
+sd$pi_f <- sd(variances[!LGM&forced])
 
 if(saveToPDF) cairo_pdf(filename=paste0(filename, ".pdf"), width=4, height=3)
 
@@ -94,12 +100,18 @@ start=1.9
 shift=0.29
 start.x=-1.4
 
+#Uncertainty
+delta_var_lgm_f_lgm_uf = (var$lgm_f/var$lgm_uf)*sqrt((sd$lgm_f/var$lgm_f)**2 + (sd$lgm_uf/var$lgm_uf)**2)
+delta_var_pi_f_pi_uf = (var$pi_f/var$pi_uf)*sqrt((sd$pi_f/var$pi_f)**2 + (sd$pi_uf/var$pi_uf)**2)
+delta_var_lgm_f_pi_f = (var$lgm_f/var$pi_f)*sqrt((sd$lgm_f/var$lgm_f)**2 + (sd$pi_f/var$pi_f)**2)
+delta_var_lgm_uf_pi_uf = (var$lgm_uf/var$pi_uf)*sqrt((sd$lgm_uf/var$lgm_uf)**2 + (sd$pi_uf/var$pi_uf)**2)
+
 text(start.x, start, "forcing dependence", pos=4, cex=.8)
-text(start.x, start -shift, substitute(paste(r[sigma], "(LGM* / LGM) =", a), list(a=round(var$lgm_f/var$lgm_uf,2))), cex=.8, pos=4)
-text(start.x, start -2*shift , substitute(paste(r[sigma], "(PI* / PI) =", a), list(a=round(var$pi_f/var$pi_uf,2))), cex=.8, pos=4)
+text(start.x, start -shift, substitute(paste(r[sigma], "(LGM* / LGM) =", a, "±", b), list(a=round(var$lgm_f/var$lgm_uf,2), b=round(delta_var_lgm_f_lgm_uf,2))), cex=.8, pos=4)
+text(start.x, start -2*shift , substitute(paste(r[sigma], "(PI* / PI) =", a, "±", b), list(a=round(var$pi_f/var$pi_uf,2),  b=round(delta_var_pi_f_pi_uf,2))), cex=.8, pos=4)
 text(start.x, start -4*shift, "state dependence", pos=4, cex=.8)
-text(start.x, start -5*shift, substitute(paste(r[sigma], "(LGM* / PI*) =", a), list(a=round(var$lgm_f/var$pi_f,2))), cex=.8, pos=4)
-text(start.x, start -6*shift, substitute(paste(r[sigma], "(LGM / PI) =", a), list(a=round(var$lgm_uf/var$pi_uf,2))), cex=.8, pos=4)
+text(start.x, start -5*shift, substitute(paste(r[sigma], "(LGM* / PI*) =", a, "±", b), list(a=round(var$lgm_f/var$pi_f,2), b=round(delta_var_lgm_f_pi_f,2))), cex=.8, pos=4)
+text(start.x, start -6*shift, substitute(paste(r[sigma], "(LGM / PI) =", a,  "±", b), list(a=round(var$lgm_uf/var$pi_uf,2), b=round(delta_var_lgm_uf_pi_uf,2))), cex=.8, pos=4)
 
 legend(-1.35, 3.75, legend=c("LGM*", "LGM", "PI*", "PI"), col=c(rep(COLS[["LGM"]],2),rep(COLS[["PI"]],2)), lty=c(1,2, 1,2), lwd=rep(2,4), cex=.9)
 plot_axis(1, label="GMST anomaly [K]")
@@ -107,5 +119,4 @@ plot_axis(2,  label="Density")
 box()
 
 dev.off()
-
 

@@ -64,7 +64,7 @@ We thank the research groups for producing and making available their data from 
 
 Model simulations were carried out using:
 - the model TransEBM **E. Ziegler and K. Rehfeld**, described in *TransEBM v. 1.0: description, tuning, and validation of a transient model of the Earth's energy balance in two dimensions*, Geoscientific Model Development (2021). Please find the current version of the model at https://github.com/paleovar/TransEBM. The first version is licensed under the GNU General Public License Version 3 and archived on Zenodo (https://doi.org/10.5281/zenodo.3941311, Ziegler and Rehfeld, 2020).
-- version 3 of the Hadley Center Coupled Model, HadCM3, described in **P. Valdes et al.**, *The BRIDGE HadCM3 family of climate models: HadCM3@Bristol v1.0*, Geoscientific Model Development (2017) and *J. Tindall, L. Sime, P. Valdes* Journal of Geophysical Research (Atmospheres) (2009) https://doi.org/10.1029/2008JD010825
+- version 3 of the Hadley Center Coupled Model, HadCM3, described in **P. Valdes et al.**, *The BRIDGE HadCM3 family of climate models: HadCM3@Bristol v1.0*, Geoscientific Model Development (2017) and *J. Tindall, L. Sime, P. Valdes* Journal of Geophysical Research (Atmospheres) (2009) https://doi.org/10.1029/2008JD010825 . The model simulation data is published on [Zenodo](https://doi.org/10.5281/zenodo.6074747) under the identifier 10.5281/zenodo.6074747 
 - the Archer UK National Supercomputing Services (www.archer.ac.uk) for HadCM3.
 
 Paleoclimate, observational and reanalysis data were obtained from:

@@ -2,12 +2,12 @@
 
 This repository provides data and code to reproduce the figures of **"State-dependent effects of natural forcing on global and local climate variability"** (Ellerhoff et al., 2022) submitted to *Geophysical Research Letters* (2022). The presented code is released under a Zenodo identifier.
 
-**Authors:** Beatrice Ellerhoff, Moritz J. Kirschner, Elisa Ziegler, Max D. Holloway, Louise Sime, Kira Rehfeld
+**Authors:** Beatrice Ellerhoff, Moritz J. Kirschner, Elisa Ziegler, Kira Rehfeld
 
-**Responsibility for this repository:** Beatrice Ellerhoff ([@bellerhoff](https://github.com/bellerhoff)) and Kira Rehfeld ([@krehfeld](https://github.com/krehfeld))
+**Responsibility for this repository:** Beatrice Ellerhoff ([@bellerhoff](https://github.com/bellerhoff)) and Kira Rehfeld ([@krehfeld](https://github.com/krehfeld)). The code builds on previous analysis by Moritz J. Kirschner ([@cellador](https://github.com/cellador)). Elisa Ziegler[@elisaziegler](https://github.com/elisaziegler) helped to conduct the analysis of TransEBM simulations (https://github.com/paleovar/TransEBM). 
 
-**Contributions to this repository:** The presented code builds on previous analysis by Moritz J. Kirschner ([@cellador](https://github.com/cellador))
- 
+**Related persons**: Max D. Holloway, Louise Sime
+
 Please see `./license.md` for terms of use. This repository contains the **maintained code and processed data** to create the figures of *Ellerhoff et al. (2022)*. The model simulation data can be found on [Zenodo](https://doi.org/10.5281/zenodo.6074747) under the identifier 10.5281/zenodo.6074747 . 
 
 ## Organisation of this repository

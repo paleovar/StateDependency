@@ -24,7 +24,8 @@ if(!file.exists(savefile))
     }
   }
   sea_ice <- lapply(sea_ice, function(x) MakeEquidistant(
-    t.x=seq(1, (length(x$data)+12)/12 - 1/12, by=1/12), t.y=x$data, time.target=seq(1, (length(x$data)+12)/12 - 1/12, by=1/12))
+   # t.x=seq(1, length(x$data)+12)/12 - 1/12, by=1/12), t.y=x$data, time.target=seq(1, (length(x$data)+12)/12 - 1/12, by=1/12)) #for monthly resolution
+    t.x=seq(1, length(x$data), by=1), t.y=x$data, time.target=seq(1, length(x$data), by=1)) #for monthly resolution
   )
   
   for(i in c("xmzkg", "xmzkh", "xmzki", "xnagh", "xnagd", "xnage")){

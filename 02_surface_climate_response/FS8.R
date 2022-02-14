@@ -98,7 +98,7 @@ if (!file.exists(savefile))
     }
     }
 
-    if(!exists("sea_ice"))
+    if(!exists("sea_ice")) #Care must be taken here: This anaylsis requires monthly resolution of sea ice. However, due to large file sizes, we only provide yearly resolution in Zenodo. Higher resolved data can be obtained upon request. 
     {
     sea_ice <- list()
     for (run_type in c("LGM*","PI*"))

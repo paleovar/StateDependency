@@ -69,9 +69,8 @@ Model simulations were carried out using:
 
 Paleoclimate, observational and reanalysis data were obtained from:
 
-- **Kennedy et al.**, *An ensemble data set of sea surface temperature change from 1850: The Met Office Hadley Centre HadSST. 4.0. 0.0 data set*, Journal of Geophysical Research: Atmospheres (2019)
 - **Rehfeld et al.**, *Global patterns of declining temperature variability from the Last Glacial Maximum to the Holocene*, Nature (2018) https://doi.org/10.1038/nature25454
-- **Rayner et al.**. *Global analyses of sea surface temperature, sea ice, and night marine air temperature since the late nineteenth century*, Journal of Geophysical Research D: Atmospheres (2003)
+- **Rayner et al.**. *Global analyses of sea surface temperature, sea ice, and night marine air temperature since the late nineteenth century*, Journal of Geophysical Research D: Atmospheres (2003) (downloaded latest version of HadISST dataset 11/2019)
 - **PAGES 2k Consortium**, "A global multiproxy database for temperature reconstructions of the Common Era." Scientific data 4 (2017).https://dx.doi.org/10.1038%2Fsdata.2017.88
 
 Forcing reconstructions were obtained from:

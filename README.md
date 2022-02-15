@@ -4,7 +4,7 @@ This repository provides data and code to reproduce the figures of **"State-depe
 
 **Authors:** Beatrice Ellerhoff, Moritz J. Kirschner, Elisa Ziegler, Kira Rehfeld
 
-**Responsibility for this repository:** Beatrice Ellerhoff ([@bellerhoff](https://github.com/bellerhoff)) and Kira Rehfeld ([@krehfeld](https://github.com/krehfeld)). The code builds on previous analysis by Moritz J. Kirschner ([@cellador](https://github.com/cellador)). Elisa Ziegler ([@elisaziegler](https://github.com/elisaziegler)) helped to conduct the analysis of TransEBM simulations (https://github.com/paleovar/TransEBM). 
+**Responsibility for this repository:** Beatrice Ellerhoff ([@bellerhoff](https://github.com/bellerhoff)) and Kira Rehfeld ([@krehfeld](https://github.com/krehfeld)). The code builds on previous analysis by Moritz J. Kirschner ([@cellador](https://github.com/cellador)). Elisa Ziegler ([@elisaziegler](https://github.com/elisaziegler)) helped to conduct the TransEBM simulations and their analysis (https://github.com/paleovar/TransEBM). 
 
 **Related persons**: Max D. Holloway, Louise Sime
 

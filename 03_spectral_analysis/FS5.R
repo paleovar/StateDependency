@@ -14,7 +14,7 @@ if(!file.exists(savefile))
     for (run in names(run_dict)[sapply(run_dict, function(x) {x == run_type})])
     {
       print(run)
-      nc <- nc_open(paste(data.dir, "/sea_ice/",run,".nc",sep=""))
+      nc <- nc_open(paste(data.dir, "/sea_ice/sea_i",run,".nc",sep=""))
       tmp <- nc_var_to_TS(nc, "iceconc")
       if (run_type == "LGM*" | run_type == "LGM") sea_ice[[run]]$data <- fldmean(tmp$data, na.rm=T, mask=!ancil$lsm$`LGM_grid-ocean`)
       if (run_type == "PI*" | run_type == "PI") sea_ice[[run]]$data <- fldmean(tmp$data, na.rm=T, mask=!ancil$lsm$`PI_grid-ocean`)

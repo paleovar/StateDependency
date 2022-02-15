@@ -96,15 +96,15 @@ if(!exists("all_data"))
   if(!file.exists(paste0("02_surface_climate_response/048_stdanom_all_data_", booted,".RData"))){
     all_data <- list()
     print("temp")
-    all_data <- getEpochData(all_data, "Surface Temperature", paste0(data.dir, "surface_temperature/"), "temp_1", boot=booting) #T
+    all_data <- getEpochData(all_data, "Surface Temperature", paste0(data.dir, "surface_temperature/surfa"), "temp_1", boot=booting) #T
     print("Precip")
-    all_data <- getEpochData(all_data, "Precipitation",  paste0(data.dir, "precipitation/"), "precip",mult=31104000.0, boot=booting) #T  #31,104,000 seconds (=1.0 years)
+    all_data <- getEpochData(all_data, "Precipitation",  paste0(data.dir, "precipitation/preci"), "precip",mult=31104000.0, boot=booting) #T  #31,104,000 seconds (=1.0 years)
     print("sea level")
-    all_data <- getEpochData(all_data, "Sea Level Pressure", paste0(data.dir, "sea_level_pressure/"), "p", boot=booting)#T
+    all_data <- getEpochData(all_data, "Sea Level Pressure", paste0(data.dir, "sea_level_pressure/sea_l"), "p", boot=booting)#T
     print("wind v")
-    all_data <- getEpochData(all_data, "Southerly Winds", paste0(data.dir, "wind/"), "v", boot=booting) #T
+    all_data <- getEpochData(all_data, "Southerly Winds", paste0(data.dir, "wind/wind_"), "v", boot=booting) #T
     print("wind u")
-    all_data <- getEpochData(all_data, "Westerly Winds", paste0(data.dir, "wind/"), "u", boot=booting) #T
+    all_data <- getEpochData(all_data, "Westerly Winds", paste0(data.dir, "wind/wind_"), "u", boot=booting) #T
     
     save("all_data", file=paste0("02_surface_climate/response/048_stdanom_all_data_", booted, ".RData"))
   } else load(paste0("02_surface_climate_response/048_stdanom_all_data_", booted, ".RData"))

@@ -22,7 +22,7 @@ if(!file.exists(paste(filename,".RData",sep="")))
 {
   gmst <- list()
   for (run in runs) {
-    nc <- nc_open(paste(data.dir, "surface_temperature/",run,".nc",sep="")) #alternatively compute fldmean using `./data/getFldmean.sh`
+    nc <- nc_open(paste(data.dir, "surface_temperature/surfa",run,".nc",sep="")) #alternatively compute fldmean using `./data/getFldmean.sh`
     gmst[[run]] <- nc_var_to_TS(nc, "temp_1")
     gmst[[run]]$data <- fldmean(gmst[[run]]$data, na.rm=T)
     nc_close(nc)

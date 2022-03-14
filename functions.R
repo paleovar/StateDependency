@@ -267,7 +267,7 @@ MeanSpec <- function(specList, iRemoveLowest = 1, weights = rep(1, length(specLi
 #' @title Linear detrending
 #' 
 #' @param y input vector
-#' @return detrended outout vector
+#' @return detrended output vector
 #' @export
 detrend <- function(y){
   fit <- lm(y ~ index(y))

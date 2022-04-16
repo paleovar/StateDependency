@@ -47,7 +47,7 @@ if(!file.exists(paste(filename,".RData",sep="")))
 }
 
 #---PLOT---#
-saveToPDF <- T
+saveToPDF <- F
 
 gmst_sync_f_d <- apply(gmst_sync, 2, function(x){detrend(filter(x, des))})
 
@@ -115,7 +115,7 @@ text(start.x, start -6*shift, substitute(paste(r[sigma], "(LGM / PI) =", a,  "±
 
 legend(-1.35, 3.75, legend=c("LGM*", "LGM", "PI*", "PI"), col=c(rep(COLS[["LGM"]],2),rep(COLS[["PI"]],2)), lty=c(1,2, 1,2), lwd=rep(2,4), cex=.9)
 plot_axis(1, label="GMST anomaly [K]")
-plot_axis(2,  label="Density")
+plot_axis(2,  label="Probability density")
 box()
 
 dev.off()

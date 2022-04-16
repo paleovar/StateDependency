@@ -24,10 +24,10 @@ iceshieldPolys[["LGM*"]] <- generate_polygon_area(ancil$iceshield$lgm == 1)
 iceshieldPolys[["PI*"]] <- generate_polygon_area(ancil$iceshield$pi == 1)
 
 #---PLOT---#
-nbreakpoints <- 17
+nbreakpoints <- 8
 latgrid <- c(-91.25,-60,-30,0,30,60,91.25)
-zlim <- list("Surface Temperature"=c(-3.4,3.4))
-col <- colorRampPalette(rev(c("black","#962D26","#de2d26","#fc9272","#fee0d2","white",
+zlim <- list("Surface Temperature"=c(-3.5,0.5))
+col <- colorRampPalette(rev(c("#fee0d2","white",
                               "#deebf7",
                               "#3182bd","#7fcdbb","#edf8b1",
                               "#ffc200")))
@@ -36,7 +36,7 @@ plot <- F
 
 if(plot)
 {
-  pdf(file=paste("02_surface_climate_response/048_stdanom_TAS.pdf",sep=""),
+  pdf(file=paste("02_surface_climate_response/048_stdanom_TAS_revised.pdf",sep=""),
       width=11,height=4)
 }
 
@@ -112,7 +112,7 @@ if(plot)
   par(cex=0.66)
 
   par(mar=c(1,6,0,6))
-  plot_colorbar(c(zlim[[1]][[1]],0.2), col=col(nbreakpoints)[1:9], axis.pos=1, add.axis=F)
-  plot_axis(1,at=axTicks(1)[c(1,3,5,7)], ticks=axTicks(1)[c(1,3,5,7)],lineVal=1, lineLab=2, lab="MSA")
+  plot_colorbar(c(zlim[[1]][[1]],zlim[[1]][[2]]), col=col(nbreakpoints), axis.pos=1, add.axis=F)
+  plot_axis(1,at=axTicks(1), ticks=axTicks(1),lineVal=1, lineLab=2, lab="MSA")
 
 if(plot) dev.off()

@@ -10,7 +10,7 @@ saveToPDF <- F
 
 if(saveToPDF) 
   {
-   cairo_pdf("04_variance_ratios/060_proxy_var_ratio_bilint_rev.pdf",
+   cairo_pdf("04_variance_ratios/060_proxy_var_ratio_bilint_rev_revised.pdf",
               width=11,height=4)
   }
   
@@ -18,10 +18,11 @@ if(saveToPDF)
   xlabels <- c("","60°S","","0°","","60°N","")
   yticks <- 10^(-3:3)
   letters <- c("a","b","c","d","e")
+  letters <- c("a","b","c","d")
   i.letter <- 0
   
-  layout(matrix(c(1:5,rep(6,5)),2,5,byrow=T), widths=c(1,1,1,1), heights=c(1,0.1))
-  par(mar=c(2,0,0,0), oma=c(1,3,.5,2),cex=1)
+  layout(matrix(c(1:4,rep(5,4)),2,4,byrow=T), widths=c(1,1,1,1), heights=c(1,0.1))
+  par(mar=c(2,0,0,0), oma=c(1,3,.5,0),cex=1) #bottom, left, top, right
   
   archives <- unique(unlist(sapply(QC.all, function(x) {unique(sapply(x, function(y) y$metafilt$Archive))}))) 
   PCH <- seq_len(length.out=length(archives))
@@ -29,9 +30,11 @@ if(saveToPDF)
                   "tree","lake sediment","hybrid","documents")
   order.legend <- c(3,2,6,4,1,5)
   
-  plot.state <- c(rep("PI",length(tsc.in)),"LGM")
+  #plot.state <- c(rep("PI",length(tsc.in)),"LGM")
+  plot.state <- rep("PI",length(tsc.in))
   plot.tsc <- c(names(tsc.in), names(tsc.in)[length(names(tsc.in))])
-  for (i in 1:(length(tsc.in)+1))
+ # for (i in 1:(length(tsc.in)+1))
+  for (i in 1:(length(tsc.in)))
   {
     state <- plot.state[i]
     tsc <- plot.tsc[i]
@@ -66,7 +69,7 @@ if(saveToPDF)
     plot_axis(1, at=xticks, ticks=xlabels, label="Latitude")
     box()
     text(-80,740,paste0(tsc,"yrs"),adj=0,cex=0.8)
-    if(state=="LGM"){text(95,780,state,adj=1,cex=0.8, col=COLS[[state]])} else {text(95,780,state,adj=1,cex=0.8)}
+    #if(state=="LGM"){text(95,780,state,adj=1,cex=0.8, col=COLS[[state]])} else {text(95,780,state,adj=1,cex=0.8)}
     text(-94, 0.001,substitute(paste("f=", c, "(", u, ",", l, ")"), list(c=format(round(changes[[state]][[tsc]], 2), nsmall=2),
                                                                         l=format(round(lower.bounds[[state]][[tsc]],2), nsmall = 2),
                                                                         u=format(round(upper.bounds[[state]][[tsc]],2), nsmall = 2)

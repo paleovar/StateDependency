@@ -1,6 +1,6 @@
 # Readme
 
-This repository provides data and code to reproduce the figures of **"State-dependent effects of natural forcing on global and local climate variability"** (Ellerhoff et al., 2022) accepted in *Geophysical Research Letters*. The presented code will be released under a Zenodo identifier upon final publication.
+This repository provides data and code to reproduce the figures of **"Contrasting state-dependent effects of natural forcing on global and local climate variability"** (Ellerhoff et al., 2022) accepted in *Geophysical Research Letters*. The presented code is released under a Zenodo identifier.
 
 **Authors:** Beatrice Ellerhoff, Moritz J. Kirschner, Elisa Ziegler, Kira Rehfeld
 

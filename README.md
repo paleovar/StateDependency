@@ -86,4 +86,4 @@ The study *Ellerhoff et al. (2022)* has been supported by funds of the Deutsche 
 
 Please report bugs to the authors (beatrice.ellerhoff(at)stud.uni-heidelberg.de, kira.rehfeld(at)uni-tuebingen.de).
 
-*Beatrice Ellerhoff and Kira Rehfeld, February 2022*
+*Beatrice Ellerhoff and Kira Rehfeld, April 2022*
